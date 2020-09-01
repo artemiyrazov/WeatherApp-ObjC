@@ -61,19 +61,51 @@
 		BA06671924FE7FDC0053D40E /* WeatherApp-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				BA06673424FE80150053D40E /* Model */,
+				BA06673524FE801C0053D40E /* View */,
+				BA06673624FE80200053D40E /* Controller */,
+				BA06673324FE7FF40053D40E /* Supporting files */,
+			);
+			path = "WeatherApp-ObjC";
+			sourceTree = "<group>";
+		};
+		BA06673324FE7FF40053D40E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				BA06672C24FE7FDF0053D40E /* main.m */,
 				BA06671A24FE7FDC0053D40E /* AppDelegate.h */,
 				BA06671B24FE7FDC0053D40E /* AppDelegate.m */,
 				BA06671D24FE7FDC0053D40E /* SceneDelegate.h */,
 				BA06671E24FE7FDC0053D40E /* SceneDelegate.m */,
-				BA06672024FE7FDC0053D40E /* ViewController.h */,
-				BA06672124FE7FDC0053D40E /* ViewController.m */,
-				BA06672324FE7FDC0053D40E /* Main.storyboard */,
-				BA06672624FE7FDF0053D40E /* Assets.xcassets */,
 				BA06672824FE7FDF0053D40E /* LaunchScreen.storyboard */,
 				BA06672B24FE7FDF0053D40E /* Info.plist */,
-				BA06672C24FE7FDF0053D40E /* main.m */,
+				BA06672624FE7FDF0053D40E /* Assets.xcassets */,
 			);
-			path = "WeatherApp-ObjC";
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		BA06673424FE80150053D40E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA06673524FE801C0053D40E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA06672324FE7FDC0053D40E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA06673624FE80200053D40E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA06672024FE7FDC0053D40E /* ViewController.h */,
+				BA06672124FE7FDC0053D40E /* ViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,8 +322,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 62KXKW7DBU;
-				INFOPLIST_FILE = "WeatherApp-ObjC/Info.plist";
+				DEVELOPMENT_TEAM = 7D9HCV7P57;
+				INFOPLIST_FILE = "WeatherApp-ObjC/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,8 +339,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 62KXKW7DBU;
-				INFOPLIST_FILE = "WeatherApp-ObjC/Info.plist";
+				DEVELOPMENT_TEAM = 7D9HCV7P57;
+				INFOPLIST_FILE = "WeatherApp-ObjC/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
