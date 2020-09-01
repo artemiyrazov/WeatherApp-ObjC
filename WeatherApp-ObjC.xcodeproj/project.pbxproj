@@ -15,6 +15,7 @@
 		BA06672A24FE7FDF0053D40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA06672824FE7FDF0053D40E /* LaunchScreen.storyboard */; };
 		BA06672D24FE7FDF0053D40E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06672C24FE7FDF0053D40E /* main.m */; };
 		BA06673E24FE83D80053D40E /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06673D24FE83D80053D40E /* MainView.m */; };
+		BA06674124FE85200053D40E /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06674024FE85200053D40E /* Forecast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		BA06672C24FE7FDF0053D40E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA06673C24FE83D80053D40E /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		BA06673D24FE83D80053D40E /* MainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		BA06673F24FE85200053D40E /* Forecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
+		BA06674024FE85200053D40E /* Forecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 		BA06673424FE80150053D40E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA06673F24FE85200053D40E /* Forecast.h */,
+				BA06674024FE85200053D40E /* Forecast.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA06674124FE85200053D40E /* Forecast.m in Sources */,
 				BA06673E24FE83D80053D40E /* MainView.m in Sources */,
 				BA06672224FE7FDC0053D40E /* ViewController.m in Sources */,
 				BA06671C24FE7FDC0053D40E /* AppDelegate.m in Sources */,

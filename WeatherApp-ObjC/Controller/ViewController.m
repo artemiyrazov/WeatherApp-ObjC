@@ -4,6 +4,7 @@
 //
 
 #import "ViewController.h"
+#import "Forecast.h"
 
 @interface ViewController ()
 
@@ -11,10 +12,17 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.mainView = ((MainView *) self.view);
-    [self.mainView configureWithDate:@"today" region:@"Saint-P" temperature:15 description:@"Rainy" systemImageName:@"cloud.rain"];
+    
+    Forecast *testForecast = [[Forecast alloc] initWithTimestamp:1598969289 temperature:25.5
+                                              weatherDescription:@"Rainy" weatherType:@"Clouds"];
+    
+    [self.mainView configureWithDate:testForecast.dateString region:@"Saint-Petersburg"
+                         temperature:testForecast.temperature description:testForecast.weatherDescription
+                     systemImageName:testForecast.systemImageName];
 }
 
 @end
