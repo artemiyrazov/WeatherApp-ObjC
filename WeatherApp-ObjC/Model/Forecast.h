@@ -5,10 +5,6 @@
 
 #import <UIKit/UIKit.h>
 
-//typedef enum {
-//    Thunderstorm, Drizzle, Rain, Snow, Atmosphere, Clear, Clouds
-//} WeatherType;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Forecast : NSObject
