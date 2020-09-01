@@ -13,8 +13,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.mainView = ((MainView *) self.view);
+    [self.mainView configureWithDate:@"today" region:@"Saint-P" temperature:15 description:@"Rainy" systemImageName:@"cloud.rain"];
 }
-
 
 @end
