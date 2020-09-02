@@ -4,7 +4,10 @@
 //
 
 #import "ViewController.h"
+#import "MainView.h"
 #import "Forecast.h"
+#import "NetworkService.h"
+#import "APIConstants.h"
 
 @interface ViewController ()
 
@@ -17,12 +20,20 @@
     [super viewDidLoad];
     self.mainView = ((MainView *) self.view);
     
-    Forecast *testForecast = [[Forecast alloc] initWithTimestamp:1598969289 temperature:25.5
-                                              weatherDescription:@"Rainy" weatherType:@"Clouds"];
+    NetworkService *networkService = [NetworkService new];
     
-    [self.mainView configureWithDate:testForecast.dateString region:@"Saint-Petersburg"
-                         temperature:testForecast.temperature description:testForecast.weatherDescription
-                     systemImageName:testForecast.systemImageName];
+    [networkService dailyForecastRequestWithLatitude:FakeRegion.latitude
+                                        andLongitude:FakeRegion.longitude
+                                      withCompletion:^(NSArray<Forecast *> *forecasts) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            Forecast *testForecast = forecasts[0];
+
+            [self.mainView configureWithDate:testForecast.dateString region:@"Saint-Petersburg"
+                                 temperature:testForecast.temperature description:testForecast.weatherDescription
+                             systemImageName:testForecast.systemImageName];
+        });
+    }];
 }
 
 @end
