@@ -37,10 +37,23 @@
                                                           NSError *error) {
         
         if (error == nil && data.bytes != 0) {
-            Forecast *testForecast = [[Forecast alloc] initWithTimestamp:1598969289 temperature:25.5
-                                                      weatherDescription:@"Rainy" weatherType:@"Clouds"];
-            NSArray *arr = @[testForecast];
-            completion(arr);
+            
+            NSError *jsonError = nil;
+            id json = [NSJSONSerialization JSONObjectWithData:data
+                                                      options:0
+                                                        error:&jsonError];
+            if (jsonError) {
+                NSLog(@"%@", jsonError.localizedDescription);
+                return;
+            }
+                        
+            NSMutableArray<Forecast *> *forecastsArray = [NSMutableArray new];
+            
+            for (NSDictionary *forecastDict in json[@"daily"]) {
+                [forecastsArray addObject: [[Forecast alloc] initFromJSONDictionary:forecastDict]];
+            }
+            
+            completion(forecastsArray);
         }
     }];
     

@@ -7,7 +7,7 @@
 
 @implementation Forecast
 
-- (id) initWithTimestamp :(NSTimeInterval)timestamp temperature :(CGFloat)temperature
+- (id) initWithTimestamp :(NSTimeInterval)timestamp temperature :(NSInteger)temperature
       weatherDescription :(NSString *)weatherDescription weatherType :(NSString *)weatherType
 {
     self = [super init];
@@ -19,6 +19,26 @@
         self.weatherDescription = weatherDescription;
     }
     return self;
+}
+
+- (id) initFromJSONDictionary :(NSDictionary *)json
+{
+    NSTimeInterval timestamp = [json[@"dt"] integerValue];
+    
+    id temperatureDict = json[@"temp"];
+    NSInteger temperature = [temperatureDict[@"day"] integerValue];
+    
+    NSArray *weatherDictArray = json[@"weather"];
+    id weatherDict = weatherDictArray[0];
+    NSString *description = weatherDict[@"description"];
+    NSString *weatherType = weatherDict[@"main"];
+    
+    Forecast *forecast = [[Forecast alloc] initWithTimestamp:timestamp
+                                                 temperature:temperature
+                                          weatherDescription:description
+                                                 weatherType:weatherType];
+    
+    return forecast;
 }
 
 - (NSString *)dateString

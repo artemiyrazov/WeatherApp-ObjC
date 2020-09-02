@@ -3,7 +3,7 @@
 // 	WeatherApp-ObjC
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,10 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSString *dateString;
 
 @property (nonatomic) NSString *weatherDescription;
-@property (nonatomic) CGFloat temperature;
+@property (nonatomic) NSInteger temperature;
 
--(id) initWithTimestamp :(NSTimeInterval)timestamp temperature :(CGFloat)temperature
+-(id) initWithTimestamp :(NSTimeInterval)timestamp temperature :(NSInteger)temperature
      weatherDescription :(NSString *)weatherDescription weatherType :(NSString *)weatherType;
+- (id) initFromJSONDictionary :(NSDictionary *)json;
 
 @end
 

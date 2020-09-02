@@ -28,10 +28,12 @@
                                       withCompletion:^(NSArray<Forecast *> *forecasts) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             Forecast *testForecast = forecasts[0];
             
             __strong typeof(self) self = weakSelf;
-            [self.mainView configureWithDate:testForecast.dateString region:@"Saint-Petersburg"
+            self.forecastsArray = forecasts;
+            [self.mainView configureWithDate:testForecast.dateString region:FakeRegion.name
                                  temperature:testForecast.temperature description:testForecast.weatherDescription
                              systemImageName:testForecast.systemImageName];
         });
