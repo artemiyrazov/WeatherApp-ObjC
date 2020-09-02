@@ -15,7 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
--(void) configureWithDate :(NSString *)date region :(NSString *)region temperature :(NSInteger)temperature
+@property (nonatomic) id<UITableViewDelegate> tableViewDelegate;
+@property (nonatomic) id<UITableViewDataSource> tableViewDataSource;
+
+-(void) showForecastWithDate :(NSString *)date region :(NSString *)region temperature :(NSInteger)temperature
               description :(NSString *)description systemImageName:(NSString *)systemImageName;
 
 @end

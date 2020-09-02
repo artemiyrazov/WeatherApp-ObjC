@@ -7,7 +7,17 @@
 
 @implementation MainView
 
-- (void)configureWithDate:(NSString *)date region:(NSString *)region temperature:(NSInteger)temperature
+- (void)setTableViewDelegate:(id<UITableViewDelegate>)tableViewDelegate
+{
+    self.tableView.delegate = tableViewDelegate;
+}
+
+- (void)setTableViewDataSource:(id<UITableViewDataSource>)tableViewDataSource
+{
+    self.tableView.dataSource = tableViewDataSource;
+}
+
+- (void)showForecastWithDate:(NSString *)date region:(NSString *)region temperature:(NSInteger)temperature
               description:(NSString *)description systemImageName:(NSString *)systemImageName
 {
     self.dateLabel.text = date;
@@ -17,6 +27,8 @@
     if (@available(iOS 13.0, *)) {
         self.weatherImageView.image = [UIImage systemImageNamed:systemImageName];
     }
+    
+    [self.tableView reloadData];
 }
 
 
