@@ -5,6 +5,18 @@
 
 #import "MainView.h"
 
+@interface MainView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *regionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@end
+
+
 @implementation MainView
 
 - (void)setTableViewDelegate:(id<UITableViewDelegate>)tableViewDelegate

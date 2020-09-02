@@ -11,10 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, readonly) NSString *CellReuseID;
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
-@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
-
 - (void) configureWithDate :(NSString *)date systemImageName :(NSString *)systemImageName
                temperature :(NSInteger)temperature;
 

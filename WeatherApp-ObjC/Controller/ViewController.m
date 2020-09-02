@@ -12,7 +12,12 @@
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, weak) MainView *mainView;
+@property (nonatomic) NSArray<Forecast *> *forecastsArray;
+- (void) refreshViews;
+
 @end
+
 
 @implementation ViewController
 

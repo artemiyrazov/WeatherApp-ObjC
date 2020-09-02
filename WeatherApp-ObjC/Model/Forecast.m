@@ -5,6 +5,14 @@
 
 #import "Forecast.h"
 
+@interface Forecast ()
+{
+    NSDate *date;
+    NSString *weatherType;
+}
+@end
+
+
 @implementation Forecast
 
 - (id) initWithTimestamp :(NSTimeInterval)timestamp temperature :(NSInteger)temperature

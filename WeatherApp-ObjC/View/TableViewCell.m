@@ -5,6 +5,15 @@
 
 #import "TableViewCell.h"
 
+@interface TableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+
+@end
+
+
 @implementation TableViewCell
 
 + (NSString *)CellReuseID
