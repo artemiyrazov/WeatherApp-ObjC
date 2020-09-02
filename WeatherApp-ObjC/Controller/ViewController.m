@@ -45,7 +45,7 @@
 
 - (void)refreshViews
 {
-    Forecast *todayForecast = self.forecastsArray.firstObject;
+    Forecast *todayForecast = _forecastsArray.firstObject;
     
     [self.mainView showForecastWithDate:todayForecast.dateString region:FakeRegion.name
                            temperature:todayForecast.temperature description:todayForecast.weatherDescription
@@ -57,7 +57,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     TableViewCell *cell = ((TableViewCell *) [tableView dequeueReusableCellWithIdentifier: TableViewCell.CellReuseID]);
-    Forecast *forecast = self.forecastsArray[indexPath.row + 1];
+    Forecast *forecast = _forecastsArray[indexPath.row + 1];
     
     [cell configureWithDate:forecast.dateString systemImageName:forecast.systemImageName temperature:forecast.temperature];
     
@@ -65,7 +65,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.forecastsArray.count - 1;
+    return _forecastsArray.count - 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
