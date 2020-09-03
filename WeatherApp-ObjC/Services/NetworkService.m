@@ -12,20 +12,19 @@
 - (void)dailyForecastRequestWithLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude
                           withCompletion: (void (^)(NSArray<Forecast *> *))completion
 {
-    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:OpenWeatherAPIConstants.getWeatherURL];
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:OpenWeatherAPIGetWeatherURL];
     
  
     NSString *excludedReports = [NSString stringWithFormat:@"%@ %@ %@ %@ %@",
-                     ForecastReportType.current, @",",
-                     ForecastReportType.hourly, @",",
-                     ForecastReportType.minutely];
+                                 ForecastReportTypeCurrent, @",",
+                                 ForecastReportTypeHourly, @",",
+                                 ForecastReportTypeMinutely];
     
-    NSArray *queryItems = [[NSArray alloc] initWithObjects:
-                           [[NSURLQueryItem alloc] initWithName:@"lat" value:[@(latitude) stringValue]],
-                           [[NSURLQueryItem alloc] initWithName:@"lon" value:[@(longitude) stringValue]],
-                           [[NSURLQueryItem alloc] initWithName:@"appid" value:OpenWeatherAPIConstants.APIKey],
-                           [[NSURLQueryItem alloc] initWithName:@"units" value:TemperatureUnits.celsius],
-                           [[NSURLQueryItem alloc] initWithName:@"exclude" value:excludedReports], nil];
+    NSArray *queryItems = @[[[NSURLQueryItem alloc] initWithName:@"lat" value:[@(latitude) stringValue]],
+                            [[NSURLQueryItem alloc] initWithName:@"lon" value:[@(longitude) stringValue]],
+                            [[NSURLQueryItem alloc] initWithName:@"appid" value:OpenWeatherAPIKey],
+                            [[NSURLQueryItem alloc] initWithName:@"units" value:TemperatureUnitsCelsius],
+                            [[NSURLQueryItem alloc] initWithName:@"exclude" value:excludedReports]];
     
     urlComponents.queryItems = queryItems;
     NSURL *url = urlComponents.URL;

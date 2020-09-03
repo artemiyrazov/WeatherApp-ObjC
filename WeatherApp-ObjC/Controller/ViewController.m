@@ -31,8 +31,8 @@
     self.networkService = [NetworkService new];
     
     __weak typeof(self)weakSelf = self;
-    [self.networkService dailyForecastRequestWithLatitude:FakeRegion.latitude
-                                        andLongitude:FakeRegion.longitude
+    [self.networkService dailyForecastRequestWithLatitude:FakeRegionLatitude
+                                        andLongitude:FakeRegionLongitude
                                       withCompletion:^(NSArray<Forecast *> *forecasts) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -47,7 +47,7 @@
 {
     Forecast *todayForecast = _forecastsArray.firstObject;
     
-    [self.mainView showForecastWithDate:todayForecast.dateString region:FakeRegion.name
+    [self.mainView showForecastWithDate:todayForecast.dateString region:FakeRegionName
                            temperature:todayForecast.temperature description:todayForecast.weatherDescription
                        systemImageName:todayForecast.systemImageName];
 }

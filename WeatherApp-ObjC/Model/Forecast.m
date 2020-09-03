@@ -15,7 +15,7 @@
 
 @implementation Forecast
 
-- (id) initWithTimestamp :(NSTimeInterval)timestamp temperature :(NSInteger)temperature
+- (instancetype) initWithTimestamp :(NSTimeInterval)timestamp temperature :(NSInteger)temperature
       weatherDescription :(NSString *)weatherDescription weatherType :(NSString *)weatherType
 {
     self = [super init];
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id) initFromJSONDictionary :(NSDictionary *)json
+- (instancetype) initFromJSONDictionary :(NSDictionary *)json
 {
     NSTimeInterval timestamp = [json[@"dt"] integerValue];
     

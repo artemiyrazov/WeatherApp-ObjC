@@ -7,27 +7,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OpenWeatherAPIConstants : NSObject
-@property (class, readonly) NSString *APIKey;
-@property (class, readonly) NSString *getWeatherURL;
+@interface OpenWeatherAPI: NSObject
+extern NSString *const OpenWeatherAPIKey;
+extern NSString *const OpenWeatherAPIGetWeatherURL;
 @end
 
 @interface TemperatureUnits : NSObject
-@property (class, readonly) NSString *celsius;
-@property (class, readonly) NSString *fahrenheit;
+extern NSString *const TemperatureUnitsCelsius;
+extern NSString *const TemperatureUnitsFahrenheit;
 @end
 
 @interface ForecastReportType : NSObject
-@property (class, readonly) NSString *current;
-@property (class, readonly) NSString *minutely;
-@property (class, readonly) NSString *hourly;
-@property (class, readonly) NSString *daily;
+extern NSString *const ForecastReportTypeCurrent;
+extern NSString *const ForecastReportTypeMinutely;
+extern NSString *const ForecastReportTypeHourly;
+extern NSString *const ForecastReportTypeDaily;
 @end
 
 @interface FakeRegion : NSObject
-@property (class, readonly) NSString *name;
-@property (class, readonly) CGFloat latitude;
-@property (class, readonly) CGFloat longitude;
+extern NSString *const FakeRegionName;
+extern CGFloat const FakeRegionLatitude;
+extern CGFloat const FakeRegionLongitude;
 @end
 
 NS_ASSUME_NONNULL_END
