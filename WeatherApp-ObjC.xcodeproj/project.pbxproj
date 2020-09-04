@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		BA06671C24FE7FDC0053D40E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06671B24FE7FDC0053D40E /* AppDelegate.m */; };
 		BA06671F24FE7FDC0053D40E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06671E24FE7FDC0053D40E /* SceneDelegate.m */; };
-		BA06672224FE7FDC0053D40E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06672124FE7FDC0053D40E /* ViewController.m */; };
+		BA06672224FE7FDC0053D40E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06672124FE7FDC0053D40E /* ForecastViewController.m */; };
 		BA06672524FE7FDC0053D40E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA06672324FE7FDC0053D40E /* Main.storyboard */; };
 		BA06672724FE7FDF0053D40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA06672624FE7FDF0053D40E /* Assets.xcassets */; };
 		BA06672A24FE7FDF0053D40E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA06672824FE7FDF0053D40E /* LaunchScreen.storyboard */; };
 		BA06672D24FE7FDF0053D40E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06672C24FE7FDF0053D40E /* main.m */; };
 		BA06673E24FE83D80053D40E /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06673D24FE83D80053D40E /* MainView.m */; };
 		BA06674124FE85200053D40E /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06674024FE85200053D40E /* Forecast.m */; };
-		BA7DA56A24FF83F400BCC3B5 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7DA56924FF83F400BCC3B5 /* TableViewCell.m */; };
+		BA7DA56A24FF83F400BCC3B5 /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7DA56924FF83F400BCC3B5 /* ForecastTableViewCell.m */; };
 		BAB7659124FE9AE600E1B747 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB7659024FE9AE600E1B747 /* NetworkService.m */; };
 		BAB7659524FEA57F00E1B747 /* APIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB7659424FEA57F00E1B747 /* APIConstants.m */; };
 /* End PBXBuildFile section */
@@ -27,8 +27,8 @@
 		BA06671B24FE7FDC0053D40E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BA06671D24FE7FDC0053D40E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BA06671E24FE7FDC0053D40E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BA06672024FE7FDC0053D40E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BA06672124FE7FDC0053D40E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BA06672024FE7FDC0053D40E /* ForecastViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
+		BA06672124FE7FDC0053D40E /* ForecastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		BA06672424FE7FDC0053D40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA06672624FE7FDF0053D40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA06672924FE7FDF0053D40E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,8 +38,8 @@
 		BA06673D24FE83D80053D40E /* MainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		BA06673F24FE85200053D40E /* Forecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
 		BA06674024FE85200053D40E /* Forecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
-		BA7DA56824FF83F400BCC3B5 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		BA7DA56924FF83F400BCC3B5 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		BA7DA56824FF83F400BCC3B5 /* ForecastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastTableViewCell.h; sourceTree = "<group>"; };
+		BA7DA56924FF83F400BCC3B5 /* ForecastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewCell.m; sourceTree = "<group>"; };
 		BAB7658F24FE9AE600E1B747 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		BAB7659024FE9AE600E1B747 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		BAB7659324FEA57F00E1B747 /* APIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 				BA06672324FE7FDC0053D40E /* Main.storyboard */,
 				BA06673C24FE83D80053D40E /* MainView.h */,
 				BA06673D24FE83D80053D40E /* MainView.m */,
-				BA7DA56824FF83F400BCC3B5 /* TableViewCell.h */,
-				BA7DA56924FF83F400BCC3B5 /* TableViewCell.m */,
+				BA7DA56824FF83F400BCC3B5 /* ForecastTableViewCell.h */,
+				BA7DA56924FF83F400BCC3B5 /* ForecastTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,8 +126,8 @@
 		BA06673624FE80200053D40E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA06672024FE7FDC0053D40E /* ViewController.h */,
-				BA06672124FE7FDC0053D40E /* ViewController.m */,
+				BA06672024FE7FDC0053D40E /* ForecastViewController.h */,
+				BA06672124FE7FDC0053D40E /* ForecastViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,8 +214,8 @@
 				BAB7659524FEA57F00E1B747 /* APIConstants.m in Sources */,
 				BA06674124FE85200053D40E /* Forecast.m in Sources */,
 				BA06673E24FE83D80053D40E /* MainView.m in Sources */,
-				BA06672224FE7FDC0053D40E /* ViewController.m in Sources */,
-				BA7DA56A24FF83F400BCC3B5 /* TableViewCell.m in Sources */,
+				BA06672224FE7FDC0053D40E /* ForecastViewController.m in Sources */,
+				BA7DA56A24FF83F400BCC3B5 /* ForecastTableViewCell.m in Sources */,
 				BA06671C24FE7FDC0053D40E /* AppDelegate.m in Sources */,
 				BA06672D24FE7FDF0053D40E /* main.m in Sources */,
 				BAB7659124FE9AE600E1B747 /* NetworkService.m in Sources */,

@@ -8,7 +8,7 @@
 @class Forecast;
 @class NetworkService;
 
-@interface ViewController : UIViewController
+@interface ForecastViewController : UIViewController
 
 @property (nonatomic) NetworkService *networkService;
 

@@ -3,13 +3,15 @@
 // 	WeatherApp-ObjC
 //
 
+
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TableViewCell : UITableViewCell
+@interface ForecastTableViewCell : UITableViewCell
 
-@property (class, readonly) NSString *CellReuseID;
+extern NSString *const ForecastTableViewCellReuseID;
 
 - (void) configureWithDate :(NSString *)date systemImageName :(NSString *)systemImageName
                temperature :(NSInteger)temperature;

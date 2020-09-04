@@ -3,9 +3,11 @@
 // 	WeatherApp-ObjC
 //
 
-#import "TableViewCell.h"
+#import "ForecastTableViewCell.h"
 
-@interface TableViewCell ()
+NSString *const ForecastTableViewCellReuseID = @"Cell";
+
+@interface ForecastTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImageView;
@@ -13,13 +15,7 @@
 
 @end
 
-
-@implementation TableViewCell
-
-+ (NSString *)CellReuseID
-{
-    return @"Cell";
-}
+@implementation ForecastTableViewCell
 
 - (void)configureWithDate:(NSString *)date systemImageName:(NSString *)systemImageName
               temperature:(NSInteger)temperature

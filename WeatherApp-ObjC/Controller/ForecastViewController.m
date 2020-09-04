@@ -10,6 +10,8 @@
 #import "APIConstants.h"
 #import "ForecastTableViewCell.h"
 
+static const NSInteger kCellHeightForRow = 50;
+
 @interface ForecastViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) MainView *mainView;
@@ -17,7 +19,6 @@
 - (void) refreshViews;
 
 @end
-
 
 @implementation ForecastViewController
 
@@ -56,7 +57,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    TableViewCell *cell = ((TableViewCell *) [tableView dequeueReusableCellWithIdentifier: TableViewCell.CellReuseID]);
+    ForecastTableViewCell *cell = ((ForecastTableViewCell *) [tableView dequeueReusableCellWithIdentifier: ForecastTableViewCellReuseID]);
     Forecast *forecast = _forecastsArray[indexPath.row + 1];
     
     [cell configureWithDate:forecast.dateString systemImageName:forecast.systemImageName temperature:forecast.temperature];
@@ -70,7 +71,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return kCellHeightForRow;
 }
 
 @end
