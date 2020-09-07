@@ -10,7 +10,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkService : NSObject
 
--(void) dailyForecastRequestWithLatitude :(CGFloat)latitude andLongitude :(CGFloat)longitude withCompletion:(void (^)(NSArray<Forecast *> *))completion;
+-(void) dailyForecastRequestWithLatitude :(CGFloat)latitude
+                            andLongitude :(CGFloat)longitude
+                           withCompletion:(void (^)(NSArray<Forecast *> *, NSError *))completion;
 
 @end
 

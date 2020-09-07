@@ -9,8 +9,9 @@
 
 @implementation NetworkService
 
-- (void)dailyForecastRequestWithLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude
-                          withCompletion: (void (^)(NSArray<Forecast *> *))completion
+- (void)dailyForecastRequestWithLatitude:(CGFloat)latitude
+                            andLongitude:(CGFloat)longitude
+                          withCompletion:(void (^)(NSArray<Forecast *> *, NSError *))completion
 {
     NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:OpenWeatherAPIGetWeatherURL];
     
@@ -28,32 +29,35 @@
     
     urlComponents.queryItems = queryItems;
     NSURL *url = urlComponents.URL;
-    
+                        
     NSURLSessionDataTask *dataTask = [NSURLSession.sharedSession
                                       dataTaskWithURL:url
                                       completionHandler:^(NSData *data,
                                                           NSURLResponse *response,
                                                           NSError *error) {
         
-        if (error == nil && data.bytes != 0) {
-            
-            NSError *jsonError = nil;
-            id json = [NSJSONSerialization JSONObjectWithData:data
-                                                      options:0
-                                                        error:&jsonError];
-            if (jsonError) {
-                NSLog(@"%@", jsonError.localizedDescription);
-                return;
-            }
-                        
-            NSMutableArray<Forecast *> *forecastsArray = [NSMutableArray new];
-            
-            for (NSDictionary *forecastDict in json[@"daily"]) {
-                [forecastsArray addObject: [[Forecast alloc] initFromJSONDictionary:forecastDict]];
-            }
-            
-            completion(forecastsArray);
+        NSError *responseError = error;
+        
+        if (responseError) {
+            completion(@[], responseError);
+            return;
         }
+        
+        id json = [NSJSONSerialization JSONObjectWithData:data
+                                                  options:0
+                                                    error:&responseError];
+        if (responseError) {
+            completion(@[], responseError);
+            return;
+        }
+        
+        NSMutableArray<Forecast *> *forecastsArray = [NSMutableArray new];
+
+        for (NSDictionary *forecastDict in json[@"daily"]) {
+            [forecastsArray addObject: [[Forecast alloc] initFromJSONDictionary:forecastDict]];
+        }
+        
+        completion(forecastsArray, responseError);
     }];
     
     [dataTask resume];

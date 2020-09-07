@@ -33,14 +33,19 @@ static const NSInteger kCellHeightForRow = 50;
     
     __weak typeof(self)weakSelf = self;
     [self.networkService dailyForecastRequestWithLatitude:FakeRegionLatitude
-                                        andLongitude:FakeRegionLongitude
-                                      withCompletion:^(NSArray<Forecast *> *forecasts) {
+                                             andLongitude:FakeRegionLongitude
+                                           withCompletion:^(NSArray<Forecast *> *forecasts, NSError *responseError) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            __strong typeof(self) self = weakSelf;
-            self.forecastsArray = forecasts;
-            [self refreshViews];
-        });
+        __strong typeof(self) self = weakSelf;
+        
+        if (responseError != nil) {
+            NSLog(@"%@",responseError.localizedDescription);
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.forecastsArray = forecasts;
+                [self refreshViews];
+            });
+        }
     }];
 }
 
