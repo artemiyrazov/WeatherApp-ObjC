@@ -10,6 +10,8 @@
 #import "APIConstants.h"
 #import "ForecastTableViewCell.h"
 
+static const NSInteger kCellHeightForRow = 50;
+
 @interface ForecastViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) MainView *mainView;
@@ -17,7 +19,6 @@
 - (void) refreshViews;
 
 @end
-
 
 @implementation ForecastViewController
 
@@ -32,14 +33,19 @@
     
     __weak typeof(self)weakSelf = self;
     [self.networkService dailyForecastRequestWithLatitude:FakeRegionLatitude
-                                        andLongitude:FakeRegionLongitude
-                                      withCompletion:^(NSArray<Forecast *> *forecasts) {
+                                             andLongitude:FakeRegionLongitude
+                                           withCompletion:^(NSArray<Forecast *> *forecasts, NSError *responseError) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            __strong typeof(self) self = weakSelf;
-            self.forecastsArray = forecasts;
-            [self refreshViews];
-        });
+        __strong typeof(self) self = weakSelf;
+        
+        if (responseError != nil) {
+            NSLog(@"%@",responseError.localizedDescription);
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.forecastsArray = forecasts;
+                [self refreshViews];
+            });
+        }
     }];
 }
 
@@ -56,7 +62,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    TableViewCell *cell = ((TableViewCell *) [tableView dequeueReusableCellWithIdentifier: TableViewCell.CellReuseID]);
+    ForecastTableViewCell *cell = ((ForecastTableViewCell *) [tableView dequeueReusableCellWithIdentifier: ForecastTableViewCellReuseID]);
     Forecast *forecast = _forecastsArray[indexPath.row + 1];
     
     [cell configureWithDate:forecast.dateString systemImageName:forecast.systemImageName temperature:forecast.temperature];
@@ -70,7 +76,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return kCellHeightForRow;
 }
 
 @end
